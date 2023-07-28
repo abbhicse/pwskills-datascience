@@ -1,0 +1,16 @@
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:i am inside if statement and i am trying to check list type[2, 3, 4]
+INFO:root:i am in anothe for loop for list inside list element 2
+INFO:root:i am inside if statement
+INFO:root:i am in anothe for loop for list inside list element 3
+INFO:root:i am inside if statement
+INFO:root:i am in anothe for loop for list inside list element 4
+INFO:root:i am inside if statement
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:we are iterating through our list and our local var is [1, 2, 3, 34, 4, [2, 3, 4], 'sudh', 'kumar']
+INFO:root:my final result for int is [1, 2, 3, 34, 4, 2, 3, 4] and str is ['sudh', 'kumar']

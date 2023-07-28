@@ -1,0 +1,6 @@
+ERROR:root:i am trying to handle a zerodivision error division by zero 
+ERROR:root:i am trying to handle a zerodivision error division by zero 
+ERROR:root:An attempt was made to divide by zero: division by zero
+ERROR:root:I am trying to handle a zerodivision error: division by zero
+ERROR:root:An attempt was made to divide by zero: division by zero
+ERROR:root:I am trying to handle a zerodivision error: division by zero
