@@ -1,0 +1,57 @@
+<!-- This is a template code for a web page that represents a simple calculator application. The code uses HTML and Jinja2 templating language to create dynamic content. Let's go through each line with comments to understand it clearly. -->
+
+<!-- The "head" block contains metadata for the web page. It's typically used to include CSS, JavaScript, and other resources. -->
+{% block head %}
+
+<!-- The <title> tag sets the title of the web page, which appears in the browser's title bar or tab. In this case, the title is "Calculator". -->
+<title>Calculator</title>
+
+<!-- The <link> tag is used to link external resources, such as stylesheets (CSS) or fonts. In this code, the "href" attribute is left empty, which means there is no CSS linked. -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<!-- This tag indicates the end of the "head" block. Everything between the "block head" and "endblock" will be included in the head section of the rendered page. -->
+{% endblock %}
+
+<!-- The "body" block contains the main content of the web page. This is where the calculator form will be created. -->
+{% block body %}
+
+<!-- The <div> element with the "content" class is used to group elements together. It represents a container for the calculator content. -->
+<div class="content">
+
+    <!-- The <h1> tag defines a top-level heading. It sets the text "Calculator" and aligns it to the center using the "style" attribute. -->
+    <h1 style="text-align: center">Calculator</h1>
+
+    <!-- The <div> element with the "form" class is used to create a container for the calculator form. -->
+    <div class="form">
+
+        <!-- The <form> tag is used to create an HTML form. The "action" attribute specifies the URL where the form data will be sent when the user submits it, and the "method" attribute sets the HTTP method to POST. -->
+        <form action="/math" method="POST">
+
+            <!-- The <label> tag defines a label for an input element. The "for" attribute should match the "id" of the related input element. It provides a user-friendly description of what the user should input. -->
+            <label for="operation">Choose a Mathematical Operation</label>
+
+<!-- The <select> tag creates a dropdown (select) menu. The "id" attribute is set to "operation", and the "name" attribute is set to "operation". When the user selects an option, its value will be sent as part of the form data. -->
+<select id="operation" name="operation">
+
+    <!-- The <option> tags define individual options in the dropdown menu. The "value" attribute specifies the value of the option, which will be sent as part of the form data when selected. The text between the <option> tags is what the user will see in the dropdown. -->
+    <option value="add">add</option>
+    <option value="subtract">subtract</option>
+    <option value="multiply">multiply</option>
+    <option value="divide">divide</option>
+    <option value="log">log</option>
+</select>
+
+            <!-- The <input> tag creates an input field for the first number. The "type" attribute is set to "text", and the "name" attribute is set to "num1". The "id" attribute is set to "num1", which associates the label "for" attribute with this input field. -->
+            <input type="text" name="num1" id="num1">
+
+            <!-- Another <input> tag for the second number input field. The "name" attribute is set to "num2", and the "id" attribute is set to "num2". -->
+            <input type="text" name="num2" id="num2">
+
+            <!-- The final <input> tag creates a submit button. When the user clicks this button, the form data will be submitted to the URL specified in the "action" attribute. The "value" attribute sets the text displayed on the button, which is "Calculate" in this case. -->
+            <input type="submit" value="Calculate">
+        </form>
+    </div>
+</div>
+
+<!-- The tag indicates the end of the "body" block. Everything between the "block body" and "endblock" will be included in the body section of the rendered page. -->
+{% endblock %}

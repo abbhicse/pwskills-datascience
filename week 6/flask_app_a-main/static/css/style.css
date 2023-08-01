@@ -1,0 +1,186 @@
+/* CSS code to style a table and its content */
+
+/* Set the background color for the entire page */
+body {
+  background-color: #d3db3e;
+}
+
+/* Make sure all elements within the body box model includes padding and border in their total width and height */
+body * {
+  box-sizing: border-box;
+}
+
+/* Style for the header section of the table */
+.header {
+  background-color: #327a81; /* Header background color */
+  color: white; /* Header text color */
+  font-size: 1.5em; /* Header font size */
+  padding: 1rem; /* Padding around the header content */
+  text-align: center; /* Center align the header content */
+  text-transform: uppercase; /* Convert header text to uppercase */
+}
+
+/* Style for the images in the table */
+img {
+  border-radius: 50%; /* Rounded border for the image, making it circular */
+  height: 60px; /* Height of the image */
+  width: 60px; /* Width of the image */
+}
+
+/* Style for the table that contains user information */
+.table-users {
+  border: 1px solid #327a81; /* Table border color */
+  border-radius: 10px; /* Rounded border for the table */
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+  max-width: calc(100% - 2em); /* Set maximum width for the table, adjusted for padding */
+  margin: 1em auto; /* Center the table on the page */
+  overflow: hidden; /* Hide any overflowing content */
+  width: 800px; /* Fixed width for the table */
+}
+
+/* Set the width of the table to 100% */
+table {
+  width: 100%;
+}
+
+/* Style for the table cells and headers */
+table td,
+table th {
+  color: #2b686e; /* Text color for cells and headers */
+  padding: 10px; /* Padding inside each cell */
+}
+
+/* Style for the table cells */
+table td {
+  text-align: center; /* Center align the cell content */
+  vertical-align: middle; /* Center align the cell content vertically */
+}
+
+/* Style for the last cell in each row */
+table td:last-child {
+  font-size: 0.95em; /* Font size for the last cell */
+  line-height: 1.4; /* Line height for the last cell */
+  text-align: left; /* Left align the content in the last cell */
+}
+
+/* Style for the table headers */
+table th {
+  background-color: #daeff1; /* Header background color */
+  font-weight: 300; /* Header font weight */
+}
+
+/* Style every other row in the table with a different background color */
+table tr:nth-child(2n) {
+  background-color: white; /* Background color for even rows */
+}
+
+/* Style every odd row in the table with a different background color */
+table tr:nth-child(2n+1) {
+  background-color: #edf7f8; /* Background color for odd rows */
+}
+
+/* Media query for screen width less than 700px */
+@media screen and (max-width: 700px) {
+  /* Make the table, table rows, and table cells display as blocks, stacking them vertically */
+  table,
+  tr,
+  td {
+    display: block;
+  }
+
+  /* Style for the first cell in each row */
+  td:first-child {
+    position: absolute; /* Position the first cell absolutely */
+    top: 50%; /* Align the first cell to the vertical center */
+    -webkit-transform: translateY(-50%); /* Translate vertically to center */
+    transform: translateY(-50%); /* Translate vertically to center */
+    width: 100px; /* Fixed width for the first cell */
+  }
+
+  /* Style for cells other than the first cell */
+  td:not(:first-child) {
+    clear: both; /* Clear the float */
+    margin-left: 100px; /* Set left margin to align with the first cell */
+    padding: 4px 20px 4px 90px; /* Padding for the cells */
+    position: relative; /* Position cells relatively */
+    text-align: left; /* Left align the content in the cells */
+  }
+
+  /* Add a colored bullet before the content in each cell */
+  td:not(:first-child):before {
+    color: #91ced4; /* Color for the bullet */
+    content: ''; /* Empty content */
+    display: block; /* Display as a block element */
+    left: 0; /* Position the bullet to the left of the cell content */
+    position: absolute; /* Position the bullet absolutely */
+  }
+
+  /* Add labels before the content in specific cells */
+  td:nth-child(2):before {
+    content: 'Name:'; /* Label for the second cell */
+  }
+  td:nth-child(3):before {
+    content: 'Email:'; /* Label for the third cell */
+  }
+  td:nth-child(4):before {
+    content: 'Phone:'; /* Label for the fourth cell */
+  }
+  td:nth-child(5):before {
+    content: 'Comments:'; /* Label for the fifth cell */
+  }
+
+  /* Style for the table rows */
+  tr {
+    padding: 10px 0; /* Padding for the rows */
+    position: relative; /* Position rows relatively */
+  }
+
+  /* Hide the first row of the table */
+  tr:first-child {
+    display: none;
+  }
+}
+
+/* Media query for screen width less than 500px */
+@media screen and (max-width: 500px) {
+  /* Adjust the styles for the first cell in each row */
+  td:first-child {
+    width: 100%; /* Full width for the first cell */
+  }
+
+  /* Adjust the styles for cells other than the first cell */
+  td:not(:first-child) {
+    margin: 0; /* Remove margins */
+    padding: 5px 1em; /* Padding for the cells */
+    width: 100%; /* Full width for cells */
+  }
+
+  /* Adjust the styles for labels before the content in cells */
+  td:not(:first-child):before {
+    font-size: .8em; /* Font size for the labels */
+    padding-top: 0.3em; /* Padding above the labels */
+    position: relative; /* Position labels relatively */
+  }
+
+  /* Adjust the styles for the last cell in each row */
+  td:last-child {
+    padding-bottom: 1rem !important; /* Add extra padding to the last cell */
+  }
+
+  /* Adjust the styles for table rows */
+  tr {
+    background-color: white !important; /* Background color for the rows */
+    border: 1px solid #6cbec6; /* Add a border to the rows */
+    border-radius: 10px; /* Rounded border for the rows */
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    margin: 0.5rem 0; /* Margin above and below the rows */
+    padding: 0; /* Remove padding for the rows */
+  }
+
+  /* Remove the border and shadow for the table */
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible; /* Make any overflowing content visible */
+  }
+}

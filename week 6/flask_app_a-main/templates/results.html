@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <!-- The "head" section of the HTML page -->
+  <meta charset="UTF-8"><!-- Declares the character encoding for the document as UTF-8 -->
+  <title>Review Page</title><!-- Sets the title of the HTML page shown in the browser tab -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"><!-- Links to the Normalize.css file, which helps in normalizing styles across different browsers -->
+      <link rel="stylesheet" href="./style.css"><!-- Links to the "style.css" file in the same directory to apply additional custom styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"><!-- This link does not have a valid value, so it won't load any additional stylesheet -->
+</head>
+<body>
+  <!-- The "body" section of the HTML page -->
+  <div class="table-users"><!-- A container div for the table -->
+   <div class="header">Calculation Result</div><!-- A div element with the class "header" containing the text "Calculation Result" -->
+   <!-- The table contents will be added here, but it's currently empty -->
+      {{result}}
+</div>
+</body>
+</html>
