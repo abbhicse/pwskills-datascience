@@ -1,0 +1,43 @@
+<!-- This line extends a base HTML template named 'base.html'. -->
+<!-- It means this file will inherit the content from the 'base.html' template. -->
+{% extends 'base.html' %}
+
+<!-- This block is named 'head' and it overrides the 'head' block in the 'base.html' template. -->
+{% block head %}
+
+<!-- This line sets the title of the web page to 'Search Page'. -->
+<title>Search Page</title>
+
+<!-- This line links to an external stylesheet, but the link is empty ("href=""") meaning no specific CSS file is being linked. -->
+<!-- You can fill in the href attribute with the URL of a CSS file to style the page. -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+<!-- This block is named 'body' and it overrides the 'body' block in the 'base.html' template. -->
+{% block body %}
+
+<!-- This <div> element has a class attribute set to 'content', which can be used for styling. -->
+<div class="content">
+
+    <!-- This <h1> heading element has its text centered with the style attribute. -->
+    <h1 style="text-align: center">Search</h1>
+
+    <!-- This <div> element has a class attribute set to 'form', which can be used for styling. -->
+    <div class="form">
+
+        <!-- This <form> element is used to create a search form. -->
+        <!-- It has an 'action' attribute set to '/review', which means the form will be submitted to the '/review' URL on form submission. -->
+        <!-- The 'method' attribute is set to 'POST', indicating that the form data will be sent to the server using the HTTP POST method. -->
+        <form action="/review" method="POST">
+
+            <!-- This <input> element is of type 'text' and has a 'name' attribute set to 'content'. -->
+            <!-- It will be used to enter the search content. -->
+            <input type="text" name="content" id="content">
+
+            <!-- This <input> element is of type 'submit' and has its value set to 'Search'. -->
+            <!-- It will be used as the submit button for the form. -->
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+{% endblock %}

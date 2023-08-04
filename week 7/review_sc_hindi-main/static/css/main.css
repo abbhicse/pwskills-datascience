@@ -1,0 +1,45 @@
+/* CSS code for styling the page */
+
+/* Set margin and font-family for body and html elements */
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Set margin and width for elements with the class "content" */
+.content {
+    margin: 0 auto; /* Center the element horizontally */
+    width: 400px;   /* Set the width to 400 pixels */
+}
+
+/* Apply border to table, table cells (td), and table header cells (th) */
+table, td, th {
+    border: 1px solid #aaa; /* Set a 1-pixel solid border with color #aaa */
+}
+
+/* Set border-collapse and width for tables */
+table {
+    border-collapse: collapse; /* Collapse table borders into a single border */
+    width: 100%;               /* Set the table width to 100% of its container */
+}
+
+/* Set height for table header cells (th) */
+th {
+    height: 30px; /* Set the height of table header cells to 30 pixels */
+}
+
+/* Center text and add padding to table cells (td) */
+td {
+    text-align: center; /* Center the text inside table cells */
+    padding: 5px;       /* Add 5 pixels of padding around the cell content */
+}
+
+/* Apply margin to elements with the class "form" */
+.form {
+    margin-top: 20px; /* Add a top margin of 20 pixels */
+}
+
+/* Set width for the element with the ID "content" */
+#content {
+    width: 70%; /* Set the width to 70% of its container */
+}
