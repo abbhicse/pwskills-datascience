@@ -1,0 +1,200 @@
+/* Set the background color of the entire page to a light blue shade (#91ced4). */
+body {
+  background-color: #91ced4;
+}
+
+/* Apply box-sizing: border-box to all elements within the body. */
+/* This ensures that padding and border widths are included in the element's total width and height. */
+body * {
+  box-sizing: border-box;
+}
+
+/* Style the header element with a dark blue background (#327a81), white text color, and other properties. */
+.header {
+  background-color: #327a81;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Style all img elements with a border radius of 50%, and set their height and width to 60px. */
+img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+/* Style the container div for the table with a border, border radius, box shadow, and max-width of 800px. */
+.table-users {
+  border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+  width: 800px;
+}
+
+/* Set the width of the table to 100% and style the table cells (td) and table headers (th). */
+table {
+  width: 100%;
+}
+table td, table th {
+  color: #2b686e;
+  padding: 10px;
+}
+table td {
+  text-align: center;
+  vertical-align: middle;
+}
+table td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: left;
+}
+table th {
+  background-color: #daeff1;
+  font-weight: 300;
+}
+
+/* Apply alternating background colors to table rows to create a striped effect. */
+table tr:nth-child(2n) {
+  background-color: white;
+}
+table tr:nth-child(2n+1) {
+  background-color: #edf7f8;
+}
+
+/* Media query for screens with a maximum width of 700px. */
+/* Apply responsive styles to reformat the table for smaller screens. */
+@media screen and (max-width: 700px) {
+  /* Set the display property of table, table rows (tr), and table cells (td) to block. */
+  table, tr, td {
+    display: block;
+  }
+
+  /* Style the first cell (td) in each row to position it absolutely at the center, and set its width to 100px. */
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100px;
+  }
+
+  /* Style all cells (td) except the first one to clear both, add left margin, set padding, and align left. */
+  td:not(:first-child) {
+    clear: both;
+    margin-left: 100px;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: left;
+  }
+
+  /* Pseudo element styling to add labels (before content) to each cell (td). */
+  td:not(:first-child):before {
+    color: #91ced4;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+
+  /* Add specific labels before each cell (td) based on their position in the table. */
+  td:nth-child(2):before {
+    content: 'Name:';
+  }
+  td:nth-child(3):before {
+    content: 'Email:';
+  }
+  td:nth-child(4):before {
+    content: 'Phone:';
+  }
+  td:nth-child(5):before {
+    content: 'Comments:';
+  }
+
+  /* Style each row (tr) to add padding and set its position to relative. */
+  tr {
+    padding: 10px 0;
+    position: relative;
+  }
+
+  /* Hide the first row (header row) since it is not needed for the responsive design. */
+  tr:first-child {
+    display: none;
+  }
+}
+
+/* Media query for screens with a maximum width of 500px. */
+/* Apply additional responsive styles to reformat the table for even smaller screens. */
+@media screen and (max-width: 500px) {
+  /* Modify the styling of the header element for smaller screens. */
+  .header {
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Modify the styling of images for smaller screens. */
+  img {
+    border: 3px solid;
+    border-color: #daeff1;
+    height: 100px;
+    margin: 0.5rem 0;
+    width: 100px;
+  }
+
+  /* Style the first cell (td) in each row for smaller screens. */
+  td:first-child {
+    background-color: #c8e7ea;
+    border-bottom: 1px solid #91ced4;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    width: 100%;
+  }
+
+  /* Modify the styling of all cells (td) except the first one for smaller screens. */
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+
+  /* Pseudo element styling for smaller screens to adjust label appearance. */
+  td:not(:first-child):before {
+    font-size: .8em;
+    padding-top: 0.3em;
+    position: relative;
+  }
+
+  /* Adjust the padding of the last cell (td) for smaller screens. */
+  td:last-child {
+    padding-bottom: 1rem !important;
+  }
+
+  /* Modify the styling of table rows (tr) for smaller screens. */
+  tr {
+    background-color: white !important;
+    border: 1px solid #6cbec6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  /* Remove border and box shadow from the table container for smaller screens. */
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
+}

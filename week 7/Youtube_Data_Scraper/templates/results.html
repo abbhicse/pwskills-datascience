@@ -1,0 +1,76 @@
+<!-- This line specifies the document type and version of HTML being used. -->
+<!DOCTYPE html>
+
+<!-- This line starts the HTML document and specifies the language as English. -->
+<html lang="en">
+
+<head>
+    <!-- This line sets the character encoding to UTF-8, which supports various characters and symbols. -->
+    <meta charset="UTF-8">
+
+    <!-- This line sets the title of the web page to "Scraped Data". -->
+    <title>Scraped YouTube Data</title>
+
+    <!-- This line links to an external stylesheet from the 'cdnjs' content delivery network (CDN). -->
+    <!-- It loads the 'normalize.min.css' file, which helps to standardize styles across different browsers. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- This line links to a local stylesheet named 'style.css' in the same directory as this HTML file. -->
+    <!-- It is used to provide custom styles for the page. -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- This line links to an empty external stylesheet. -->
+    <!-- It means no specific CSS file is being linked. -->
+    <!-- You can fill in the href attribute with the URL of another CSS file if needed. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!-- This <div> element has a class attribute set to 'table-users'. -->
+    <!-- It can be used for styling or selecting this element using CSS or JavaScript. -->
+    <div class="table-users">
+        <!-- This <div> element has a class attribute set to 'header'. -->
+        <!-- It can be used for styling or selecting this element using CSS or JavaScript. -->
+        <div class="header">Scraped YouTube Data</div>
+
+        <!-- This <table> element is used to create a table to display scraped data. -->
+        <!-- The 'cellspacing' attribute sets the space between table cells to 0. -->
+        <table cellspacing="0">
+            <!-- This <tr> element represents a table row and contains table headings (th). -->
+            <tr>
+                <!-- This <th> element represents a table header cell for the "Video Title" column. -->
+                <th width="230">Video Title</th>
+
+                <!-- This <th> element represents a table header cell for the "Video Views" column. -->
+                <th>Video Views</th>
+
+                <!-- This <th> element represents a table header cell for the "Video Posting Time" column. -->
+                <th>Video Posting Time</th>
+
+                <!-- This <th> element represents a table header cell for the "Video URL" column. -->
+                <th>Video URL</th>
+
+                <!-- This <th> element represents a table header cell for the "Thumbnail Link" column. -->
+                <th>Thumbnail Link</th>
+
+            </tr>
+
+                <!-- This is a placeholder for a loop that iterates over a CSV file. -->
+                <!-- The loop is using a template engine like Jinja, Django, or similar. -->
+                <!-- The loop will generate table rows (tr) for each data row inside the CSV file. -->
+                {% for index, row in data.iterrows() %}
+            <tr>
+                <!-- These <td> elements represent table data cells, used to display youtube video details. -->
+                <!-- This is where the video details (title, Views, Posting time, URL, Thumbnail Link) would be inserted when the loop runs. -->
+                <td>{{ row['Video Title'] }}</td>
+                <td>{{ row['Video Views'] }}</td>
+                <td>{{ row['Video Posting Time'] }}</td>
+                <td><a href="{{ row['Video URL'] }}" target="_blank">{{ row['Video URL'] }}</a></td>
+                <td><a href="{{ row['Thumbnail Link'] }}" target="_blank"><img src="{{ row['Thumbnail Link'] }}" alt="{{ row['Video Title'] }}"></a></td>
+            </tr>
+                {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

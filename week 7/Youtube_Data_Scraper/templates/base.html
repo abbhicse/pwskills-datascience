@@ -1,0 +1,32 @@
+<!-- This line specifies the document type and version of HTML being used. -->
+<!DOCTYPE html>
+
+<!-- This line starts the HTML document and specifies the language as English. -->
+<html lang="en">
+
+<head>
+    <!-- This line sets the character encoding to UTF-8, which supports various characters and symbols. -->
+    <meta charset="UTF-8">
+
+    <!-- This line sets the viewport properties, allowing the page to adjust its layout to fit different screen sizes. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This line defines the compatibility mode for Internet Explorer. -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- This line links to an external stylesheet, but the link is empty ("href=""") meaning no specific CSS file is being linked. -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- This is a placeholder for a block of content that can be filled in later. -->
+    <!-- In certain web frameworks, like Django, this allows for reusable templates. -->
+    <!-- It's common to override this block in other HTML files that extend this template. -->
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <!-- This is another placeholder for a block of content that can be filled in later. -->
+    <!-- Similar to the previous block, it's used for extending and overriding templates. -->
+    {% block body %}{% endblock %}
+</body>
+
+</html>
